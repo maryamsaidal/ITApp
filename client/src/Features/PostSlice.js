@@ -67,7 +67,7 @@ export const savePost=createAsyncThunk("posts/savePost",
     async (postData)=>{
         try{
             const response =await
-            axios.post('http://localhost:3001/savePost',{
+            axios.post(`https://itapp-server.onrender.com/savePost`,{
                 postMsg:postData.postMsg,
                 email:postData.email,
             });
@@ -80,7 +80,7 @@ export const savePost=createAsyncThunk("posts/savePost",
 
 export const getPosts=createAsyncThunk("post/getPosts",async ()=>{
     try{
-        const response =await axios.get("http://localhost:3001/getPosts");
+        const response =await axios.get(`https://itapp-server.onrender.com/getPosts`);
         return response.data.posts;
         console.log(response);
 
